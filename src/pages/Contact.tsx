@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Phone, Mail, MapPin } from "lucide-react";
+import emailjs from "emailjs-com";
 import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
@@ -18,11 +19,31 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for your message. We'll get back to you soon.",
-    });
-    setFormData({ name: "", email: "", subject: "", message: "" });
+    // Replace these with your actual EmailJS values
+    const SERVICE_ID = "your_service_id";
+    const TEMPLATE_ID = "your_template_id";
+    const PUBLIC_KEY = "your_public_key";
+
+    emailjs.send(SERVICE_ID, TEMPLATE_ID, {
+      from_name: formData.name,
+      from_email: formData.email,
+      subject: formData.subject,
+      message: formData.message,
+    }, PUBLIC_KEY)
+      .then(() => {
+        toast({
+          title: "Message Sent!",
+          description: "Thank you for your message. We'll get back to you soon.",
+        });
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      })
+      .catch(() => {
+        toast({
+          title: "Error",
+          description: "There was an error sending your message. Please try again later.",
+          variant: "destructive",
+        });
+      });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -121,8 +142,7 @@ const Contact = () => {
                     <Phone className="h-6 w-6 text-primary mt-1" />
                     <div>
                       <h3 className="font-semibold mb-2">Phone</h3>
-                      <p className="text-gray-600">+91 98765 43210</p>
-                      <p className="text-gray-600">+91 87654 32109</p>
+                      <p className="text-gray-600">+91 7838196438</p>
                     </div>
                   </div>
                 </CardContent>
@@ -134,8 +154,7 @@ const Contact = () => {
                     <Mail className="h-6 w-6 text-primary mt-1" />
                     <div>
                       <h3 className="font-semibold mb-2">Email</h3>
-                      <p className="text-gray-600">info@urmilaconstruction.com</p>
-                      <p className="text-gray-600">projects@urmilaconstruction.com</p>
+                      <p className="text-gray-600">Deepakraghuwanshih@gmail.com</p>
                     </div>
                   </div>
                 </CardContent>
