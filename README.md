@@ -1,73 +1,55 @@
-# Welcome to your Lovable project
+# Urmila Constructions Web
 
-## Project info
+This is a modern React + Vite web application for Urmila Constructions.
 
-**URL**: https://lovable.dev/projects/6bcba369-e9e9-4073-8f72-0b2eda3f6682
+## Features
+- Built with React, TypeScript, Vite, and Tailwind CSS
+- Responsive design
+- Contact form with EmailJS integration
+- Ready for deployment on Vercel or GitHub Pages
 
-## How can I edit this code?
+## Getting Started
 
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/6bcba369-e9e9-4073-8f72-0b2eda3f6682) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+### 1. Install dependencies
+```bash
+npm install
 ```
 
-**Edit a file directly in GitHub**
+### 2. Development server
+```bash
+npm run dev
+```
+App will be available at `http://localhost:8080` (or as shown in your terminal).
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### 3. Build for production
+```bash
+npm run build
+```
+Output will be in the `dist` folder.
 
-**Use GitHub Codespaces**
+### 4. Preview production build
+```bash
+npm run preview
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Deployment
 
-## What technologies are used for this project?
+### Deploy to Vercel
+1. Push your code to GitHub.
+2. Go to [Vercel](https://vercel.com), import your repo, and deploy. Use `dist` as the output directory.
 
-This project is built with:
+### Deploy to GitHub Pages
+1. Make sure the `base` in `vite.config.ts` is set to `/urmila-constructions-web/`.
+2. Run:
+   ```bash
+   npm run deploy
+   ```
+3. Set GitHub Pages source to the `gh-pages` branch.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Contact Form Setup (EmailJS)
+1. Create an account at [EmailJS](https://www.emailjs.com/).
+2. Set up your email service and template.
+3. Add your Service ID, Template ID, and Public Key in `Contact.tsx`.
 
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/6bcba369-e9e9-4073-8f72-0b2eda3f6682) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## License
+This project is for demonstration and internal use.
