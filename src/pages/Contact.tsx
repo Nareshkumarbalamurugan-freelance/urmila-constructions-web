@@ -20,9 +20,9 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Replace these with your actual EmailJS values
-    const SERVICE_ID = "your_service_id";
-    const TEMPLATE_ID = "your_template_id";
-    const PUBLIC_KEY = "your_public_key";
+    const SERVICE_ID = "service_baky1xf";
+    const TEMPLATE_ID = "template_e51142j";
+    const PUBLIC_KEY = "8Kt47BG4LMIyJAfBJ";
 
     emailjs.send(SERVICE_ID, TEMPLATE_ID, {
       from_name: formData.name,
